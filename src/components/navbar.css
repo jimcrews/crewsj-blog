@@ -1,0 +1,67 @@
+.navbar {
+  overflow: hidden;
+  height: 90px;
+}
+
+.navbar .nav-left-items {
+  float: left;
+  margin-left: 10%;
+  cursor: pointer;
+}
+
+.navbar .nav-right-items {
+  float: right;
+  margin-right: 10%;
+}
+
+.navbar .nav-text-item {
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 45px;
+  color: rgb(227, 59, 59); /* red colour theme */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar .profile-wrapper {
+  position: absolute;
+  width: 300px;
+  height: 90px;
+  top: 10px;
+}
+
+.navbar .profile-wrapper .profile-pic {
+  max-width: 90px;
+  height: auto;
+}
+
+.navbar .profile-wrapper .profile-name {
+  color: rgb(227, 59, 59); /* red colour theme */
+  bottom: 35px;
+  position: relative;
+  margin-left: 20px;
+  font-size: 40px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+/* mobile navbar */
+.navbar-wrapper .nav-mobile-items {
+  display: none;
+  margin-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+  padding-left: auto;
+  overflow: hidden;
+}
+
+/* If the browser window is 650px or smaller */
+@media only screen and (max-width: 650px) {
+  .navbar .nav-right-items {
+    display: none !important;
+  }
+  .navbar-wrapper .nav-mobile-items {
+    display: block !important;
+  }
+}

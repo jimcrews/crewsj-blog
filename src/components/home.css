@@ -1,0 +1,60 @@
+.home-wrapper {
+    margin: auto;
+    padding: 10px;
+    max-width: 740px;
+    margin-top: 20px;
+}
+
+.home-wrapper .all-posts-wrapper {
+    margin-top: 60px;
+}
+
+.home-wrapper .all-posts-wrapper .post-heading {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.home-wrapper .all-posts-wrapper .post-heading h2 {
+    font-weight: 400;
+}
+
+.home-wrapper .all-posts-wrapper .post-heading:hover {
+    color: rgb(227, 59, 59);
+    /* red colour theme */
+    transition: 0.1s;
+}
+
+.home-wrapper .all-posts-wrapper .post-read-more {
+    width: 95px;
+    color: #0076d9;
+    font-size: 19px;
+    margin-top: 30px;
+    display: block;
+    text-decoration: none;
+}
+.home-wrapper .all-posts-wrapper .post-read-more:hover {
+    text-decoration: underline;
+}
+
+.home-wrapper .all-posts-wrapper .post-date {
+    color: grey;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+.home-wrapper .all-posts-wrapper .post-cover-image-wapper {
+    max-width: 700px;
+}
+
+.home-wrapper .all-posts-wrapper .post-cover-image-wapper img {
+    max-width: 100%;
+}
+
+.home-wrapper .all-posts-wrapper {
+    padding-bottom: 30px;
+    border-bottom: 3px dotted rgb(204, 204, 204);
+}
+.home-wrapper .all-posts-wrapper:last-child {
+    border-bottom: none;
+}
