@@ -43,6 +43,12 @@
     margin-bottom: 30px;
 }
 
+.home-wrapper .all-posts-wrapper .post-tldr {
+    line-height: 23px;
+    color: rgb(40, 40, 40);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
 .home-wrapper .all-posts-wrapper .post-cover-image-wapper {
     max-width: 700px;
 }

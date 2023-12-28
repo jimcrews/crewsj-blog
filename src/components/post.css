@@ -1,9 +1,9 @@
 .post-wrapper {
-
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   margin-top: 50px;
-    max-width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-wrapper .post-date {
@@ -19,25 +19,30 @@
 }
 
 .post-wrapper pre {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: aliceblue;
-  }
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: aliceblue;
+}
 
 .post-wrapper table {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.post-wrapper table td, .post-wrapper table th {
-    border: 1px solid #ddd;
-    padding: 8px;
+.post-wrapper table td,
+.post-wrapper table th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
-.post-wrapper table tr:nth-child(even){background-color: #f2f2f2;}
+.post-wrapper table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-.post-wrapper table tr:hover {background-color: #ddd;}
+.post-wrapper table tr:hover {
+  background-color: #ddd;
+}
 
 .post-wrapper table th {
   padding-top: 12px;

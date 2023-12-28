@@ -52,7 +52,7 @@ function Home() {
                             </div>
                         )}
 
-                        <p>{blog.tldr}</p>
+                        <p className='post-tldr'>{blog.tldr}</p>
 
                         <Link className='post-read-more' to={post_route(blog.slug)} state={blog}><p>Read More</p></Link>
 
