@@ -6,7 +6,7 @@
 }
 
 .home-wrapper .all-posts-wrapper {
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .home-wrapper .all-posts-wrapper .post-heading {
@@ -17,6 +17,7 @@
 
 .home-wrapper .all-posts-wrapper .post-heading h2 {
     font-weight: 400;
+    display: inline-block;
 }
 
 .home-wrapper .all-posts-wrapper .post-heading:hover {
@@ -26,11 +27,9 @@
 }
 
 .home-wrapper .all-posts-wrapper .post-read-more {
-    width: 95px;
     color: #0076d9;
     font-size: 19px;
-    margin-top: 30px;
-    display: block;
+    display: inline-block;
     text-decoration: none;
 }
 .home-wrapper .all-posts-wrapper .post-read-more:hover {
