@@ -1,9 +1,10 @@
 .post-wrapper {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  margin-top: 50px;
+  margin-top: 40px;
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
+  padding: 10px;
 }
 
 .post-wrapper .post-date {
@@ -50,4 +51,11 @@
   text-align: left;
   background-color: #04AA6D;
   color: white;
+}
+
+/* If the browser window is 650px or smaller */
+@media only screen and (max-width: 650px) {
+  .post-wrapper {
+    margin-top: 0px;
+  }
 }
