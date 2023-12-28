@@ -44,24 +44,9 @@
   font-family: 'Shadows Into Light', cursive;
 }
 
-/* mobile navbar */
-.navbar-wrapper .nav-mobile-items {
-  display: none;
-  margin-top: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: rgb(245, 245, 245);
-  text-align: center;
-  padding-left: auto;
-  overflow: hidden;
-}
-
 /* If the browser window is 650px or smaller */
 @media only screen and (max-width: 650px) {
   .navbar .nav-right-items {
     display: none !important;
-  }
-  .navbar-wrapper .nav-mobile-items {
-    display: block !important;
   }
 }

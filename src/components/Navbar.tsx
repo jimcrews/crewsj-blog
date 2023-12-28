@@ -25,11 +25,6 @@ function Navbar() {
                     <a className='nav-text-item' href={githubUrl} target="_blank">Github</a>
                 </span>
             </div>
-            <div className='nav-mobile-items'>
-                <span className='nav-text-item' style={{ paddingRight: "20px" }}>Archive</span>
-                <span className='nav-text-item' style={{ paddingRight: "20px" }}>LinkedIn</span>
-                <span className='nav-text-item'>Github</span>
-            </div>
         </div>
     )
 }

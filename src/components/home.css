@@ -2,7 +2,6 @@
     margin: auto;
     padding: 10px;
     max-width: 740px;
-    margin-top: 20px;
 }
 
 .home-wrapper .all-posts-wrapper {
@@ -63,3 +62,10 @@
 .home-wrapper .all-posts-wrapper:last-child {
     border-bottom: none;
 }
+
+/* If the browser window is 650px or smaller */
+@media only screen and (max-width: 650px) {
+    .home-wrapper .all-posts-wrapper {
+        margin-top: 0px;
+    }
+  }
