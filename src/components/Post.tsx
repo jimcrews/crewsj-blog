@@ -62,7 +62,13 @@ function Post() {
                             <img className="profile-pic" src={postObj?.cover} alt="profile picture" />
                         </div>
                     )}
-                    {markdown && <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>}
+                    <div className="post-markdown-wrapper">
+                        {markdown && <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>}
+                    </div>
+
+                    <div className="post-footer-wrapper">
+                        <h2>Thanks for Reading</h2>
+                    </div>
                 </>
             )}
 

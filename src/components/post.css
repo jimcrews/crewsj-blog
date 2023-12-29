@@ -1,10 +1,24 @@
 .post-wrapper {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  margin-top: 40px;
+
+  margin-top: 20px;
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+}
+
+.post-wrapper .post-markdown-wrapper {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  line-height: 22px;
+}
+
+.post-wrapper img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .post-wrapper .post-date {
@@ -22,7 +36,7 @@
 .post-wrapper pre {
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: aliceblue;
+  background-color: rgb(245, 245, 245);
 }
 
 .post-wrapper table {
@@ -53,9 +67,26 @@
   color: white;
 }
 
+.post-wrapper strong {
+  color: rgb(227, 59, 59); /* red colour theme */
+}
+
+.post-wrapper .post-footer-wrapper h2 {
+  margin-top: 40px;
+  font-family: 'Shadows Into Light', cursive;
+  color: rgb(227, 59, 59); /* red colour theme */
+}
+
 /* If the browser window is 650px or smaller */
 @media only screen and (max-width: 650px) {
   .post-wrapper {
     margin-top: 0px;
+  }
+
+  .post-wrapper img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
   }
 }

@@ -43,8 +43,18 @@ function Home() {
 
                     <div className="post-details">
 
-                        <Link to={post_route(blog.slug)} state={blog} className='post-heading'><h2>{blog.title}</h2></Link>
-                        <div className='post-date'>{blog.date}</div>
+                        {blog.date && blog.markdown ? (
+                            <Link to={post_route(blog.slug)} state={blog} className='post-heading'><h2>{blog.title}</h2></Link>
+                        ) : (
+                           <span className='post-heading-disabled'><h2>{blog.title}</h2></span>
+                        )}
+                        
+                        {blog.date ? (
+                            <div className='post-date'>{blog.date}</div>
+                        ) : (
+                            <div className='post-date'>In Progress</div>
+                        )}
+                        
 
                         {blog.cover && (
                             <div className='post-cover-image-wapper'>
@@ -54,7 +64,10 @@ function Home() {
 
                         <p className='post-tldr'>{blog.tldr}</p>
 
-                        <Link className='post-read-more' to={post_route(blog.slug)} state={blog}><p>Read More</p></Link>
+                        {blog.date && blog.markdown && (
+                            <Link className='post-read-more' to={post_route(blog.slug)} state={blog}><p>Read More</p></Link>
+                        )}
+                        
 
 
                     </div>
