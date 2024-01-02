@@ -65,10 +65,13 @@ function Post() {
                     <div className="post-markdown-wrapper">
                         {markdown && <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>}
                     </div>
+                    
+                    {markdown && (
+                        <div className="post-footer-wrapper">
+                            <h2>Thanks for Reading</h2>
+                        </div>
+                    )}
 
-                    <div className="post-footer-wrapper">
-                        <h2>Thanks for Reading</h2>
-                    </div>
                 </>
             )}
 
