@@ -1,5 +1,4 @@
 .post-wrapper {
-
   margin-top: 20px;
   max-width: 1024px;
   margin-left: auto;
@@ -33,10 +32,23 @@
   font-size: 32px;
 }
 
+.post-wrapper h3 {
+  color: rgb(37, 90, 181);
+}
+
+/* code block */
 .post-wrapper pre {
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: rgb(245, 245, 245);
+color: white;
+  background-color: rgb(35, 35, 35);
+  text-wrap:wrap;
+}
+
+/* inline code */
+.post-wrapper code {
+  color: white;
+  background-color: rgb(35, 35, 35);
 }
 
 .post-wrapper table {
@@ -55,15 +67,11 @@
   background-color: #f2f2f2;
 }
 
-.post-wrapper table tr:hover {
-  background-color: #ddd;
-}
-
 .post-wrapper table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04AA6D;
+  background-color: #9e9e9e;
   color: white;
 }
 
