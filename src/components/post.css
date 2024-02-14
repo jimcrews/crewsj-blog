@@ -33,22 +33,28 @@
 }
 
 .post-wrapper h3 {
-  color: rgb(37, 90, 181);
+  font-style: italic;
 }
 
 /* code block */
 .post-wrapper pre {
   margin-top: 10px;
   margin-bottom: 10px;
-color: white;
-  background-color: rgb(35, 35, 35);
+  color: rgb(230, 230, 230);
+  background-color: rgb(48, 48, 48);
+  padding: 5px;
   text-wrap:wrap;
+}
+
+.post-wrapper pre code {
+  color: white;
+  background-color: rgb(48, 48, 48);
 }
 
 /* inline code */
 .post-wrapper code {
-  color: white;
-  background-color: rgb(35, 35, 35);
+  color: rgb(0, 128, 255);
+
 }
 
 .post-wrapper table {
