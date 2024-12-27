@@ -59,6 +59,7 @@
 }
 
 .home-wrapper .all-posts-wrapper .post-cover-image-wapper {
+    text-align: center;
     max-width: 700px;
 }
 
