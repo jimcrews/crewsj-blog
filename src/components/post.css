@@ -20,6 +20,20 @@
   margin-bottom: 30px;
 }
 
+.post-wrapper .post-body-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* optional if you ever add constraints */
+}
+
+.post-wrapper .post-body-image-wrapper img {
+    width: 100%;
+    height: auto; /* maintain aspect ratio */
+    max-height: 200px; /* limit how tall it gets */
+    object-fit:cover; /* or just remove object-fit entirely */
+    display: block;
+}
+
 .post-wrapper .post-date {
   color: grey;
   margin-top: -10px;

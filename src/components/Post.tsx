@@ -58,8 +58,8 @@ function Post() {
                     <div className='post-date'>{postObj.date}</div>
 
                     {postObj.cover && (
-                        <div className='post-cover-image-wapper'>
-                            <img className="profile-pic" src={postObj?.cover} alt="profile picture" />
+                        <div className='post-body-image-wrapper'>
+                            <img className="profile-pic" src={postObj?.postCoverPic} alt="profile picture" />
                         </div>
                     )}
                     <div className="post-markdown-wrapper">

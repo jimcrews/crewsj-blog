@@ -57,7 +57,7 @@ function Home() {
                         
 
                         {blog.cover && (
-                            <div className='post-cover-image-wapper'>
+                            <div className='post-cover-image-wrapper'>
                                 <img className="profile-pic" src={blog.cover} alt="profile picture" />
                             </div>
                         )}

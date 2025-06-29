@@ -53,18 +53,29 @@
 }
 
 .home-wrapper .all-posts-wrapper .post-tldr {
-    line-height: 23px;
-    color: rgb(40, 40, 40);
+    color: rgb(53, 53, 53);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 23px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
-.home-wrapper .all-posts-wrapper .post-cover-image-wapper {
-    text-align: center;
-    max-width: 700px;
-}
-
-.home-wrapper .all-posts-wrapper .post-cover-image-wapper img {
+.home-wrapper .all-posts-wrapper .post-cover-image-wrapper {
+    width: 100%;
     max-width: 100%;
+    overflow: hidden;
+
+}
+
+.home-wrapper .all-posts-wrapper .post-cover-image-wrapper img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit:cover;
+    display: block;
+
 }
 
 .home-wrapper .all-posts-wrapper {
