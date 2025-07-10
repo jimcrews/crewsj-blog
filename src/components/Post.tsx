@@ -8,6 +8,12 @@ import remarkGfm from 'remark-gfm'
 
 import './post.css';
 
+import PlinkoComponent from './PlinkoComponent';
+
+const componentMap: Record<string, React.FC> = {
+    PlinkoComponent,
+};
+
 function Post() {
     const location = useLocation();
     const [searchParams] = useSearchParams();
@@ -46,6 +52,16 @@ function Post() {
     }, [postObj])
 
 
+    const renderPostContent = () => {
+        if (postObj?.markdown && markdown) {
+            return <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>;
+        }
+
+        if (postObj?.component && componentMap[postObj.component]) {
+            const DynamicComponent = componentMap[postObj.component];
+            return <DynamicComponent />;
+        }
+    };
 
     return (
         <div className="post-wrapper">
@@ -54,19 +70,23 @@ function Post() {
 
             {postObj && !isError && (
                 <>
+                {postObj?.markdown && markdown && (
+                    <>
                     <h2 className='post-heading'>{postObj.title}</h2>
                     <div className='post-date'>{postObj.date}</div>
+                    </>
+                )}
 
-                    {postObj.cover && (
+                    {postObj?.markdown && markdown && postObj.cover && (
                         <div className='post-body-image-wrapper'>
                             <img className="profile-pic" src={postObj?.postCoverPic} alt="profile picture" />
                         </div>
                     )}
                     <div className="post-markdown-wrapper">
-                        {markdown && <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>}
+                        {renderPostContent()}
                     </div>
                     
-                    {markdown && (
+                    {postObj?.markdown && markdown && (
                         <div className="post-footer-wrapper">
                             <h2>Thanks for Reading</h2>
                         </div>

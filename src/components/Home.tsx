@@ -43,7 +43,7 @@ function Home() {
 
                     <div className="post-details">
 
-                        {blog.date && blog.markdown ? (
+                        {blog.date && (blog.markdown || blog.component) ? (
                             <Link to={post_route(blog.slug)} state={blog} className='post-heading'><h2>{blog.title}</h2></Link>
                         ) : (
                            <span className='post-heading-disabled'><h2>{blog.title}</h2></span>
@@ -64,7 +64,7 @@ function Home() {
 
                         <p className='post-tldr'>{blog.tldr}</p>
 
-                        {blog.date && blog.markdown && (
+                        {blog.date && (blog.markdown || blog.component) && (
                             <Link className='post-read-more' to={post_route(blog.slug)} state={blog}><p>Read More</p></Link>
                         )}
                         

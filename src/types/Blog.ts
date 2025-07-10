@@ -6,6 +6,7 @@ type Blog = {
     cover?: string,
     date: string,
     markdown: string,
+    component: string,
     postCoverPic: string,
     tldr: string
 }
