@@ -31,28 +31,8 @@ export default function PlinkoComponent() {
   const flashTimers = useRef<Map<number, number>>(new Map());
 
   const [balls, setBalls] = useState<Ball[]>([]);
-  const [betAmount, setBetAmount] = useState<number>(100);
+  const [betAmount, setBetAmount] = useState<number>(1000);
   const [bankAccount, setBankAccount] = useState<number>(1000);
-  const [displayBankAccount, setDisplayBankAccount] = useState<number>(1000);
-
-  // Animation function for smooth number transitions
-  const animateNumber = (start: number, end: number, setter: (value: number) => void) => {
-    const duration = 500; // 500ms animation
-    const steps = 30; // 30 steps for smooth animation
-    const stepTime = duration / steps;
-    const increment = (end - start) / steps;
-    
-    let current = start;
-    const timer = setInterval(() => {
-      current += increment;
-      if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
-        setter(end);
-        clearInterval(timer);
-      } else {
-        setter(current);
-      }
-    }, stepTime);
-  };
 
   // Initialize pin positions
   useEffect(() => {
@@ -80,8 +60,6 @@ export default function PlinkoComponent() {
   // Drop ball
   const dropBall = () => {
     if (betAmount.toFixed(2) > bankAccount.toFixed(2)) {
-      console.log(betAmount)
-      console.log(bankAccount)
       alert('Cannot bet more than your bank account!');
       return;
     }
@@ -89,9 +67,6 @@ export default function PlinkoComponent() {
     // Immediately deduct bet from bank account
     const newBankAccount = bankAccount - betAmount;
     setBankAccount(newBankAccount);
-    
-    // Animate the bank account display
-    animateNumber(displayBankAccount, newBankAccount, setDisplayBankAccount);
     
     setBalls(prev => [
       ...prev,
@@ -108,58 +83,6 @@ export default function PlinkoComponent() {
     ]);
   };
 
-    // Drop 100 balls
-  const drop100Balls = () => {
-    const totalBet = betAmount * 100;
-    if (totalBet > bankAccount) {
-      alert(`Cannot bet $${totalBet} when you only have $${bankAccount}!`);
-      return;
-    }
-    
-    // Deduct total bet from bank account
-    const newBankAccount = bankAccount - totalBet;
-    setBankAccount(newBankAccount);
-    animateNumber(displayBankAccount, newBankAccount, setDisplayBankAccount);
- 
-    const newBalls = Array.from({ length: 100 }, () => ({
-      id: Math.random().toString(36).substr(2, 9),
-      x: CANVAS_WIDTH / 2 + (Math.random() - 0.5) * 40,
-      y: BALL_SIZE,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: 0,
-      active: true,
-      currentRow: 0,
-      counted: false,
-    }));
-    setBalls(prev => [...prev, ...newBalls]);
-  };
-
-    // Drop 1000 balls
-  const drop1000Balls = () => {
-    const totalBet = betAmount * 1000;
-    if (totalBet > bankAccount) {
-      alert(`Cannot bet $${totalBet} when you only have $${bankAccount}!`);
-      return;
-    }
-    
-    // Deduct total bet from bank account
-    const newBankAccount = bankAccount - totalBet;
-    setBankAccount(newBankAccount);
-    animateNumber(displayBankAccount, newBankAccount, setDisplayBankAccount);
- 
-    const newBalls = Array.from({ length: 1000 }, () => ({
-      id: Math.random().toString(36).substr(2, 9),
-      x: CANVAS_WIDTH / 2 + (Math.random() - 0.5) * 40,
-      y: BALL_SIZE,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: 0,
-      active: true,
-      currentRow: 0,
-      counted: false,
-    }));
-    setBalls(prev => [...prev, ...newBalls]);
-  };
-
   // Reset all data
   const resetGame = () => {
     bucketCounts.current = Array(MULTIPLIERS.length).fill(0);
@@ -169,11 +92,8 @@ export default function PlinkoComponent() {
     flashTimers.current.clear();
     setBalls([]);
     setBankAccount(1000);
-    setDisplayBankAccount(1000);
-  };
-
-  const allIn = () => {
-    setBetAmount(Math.round(bankAccount * 100) / 100);
+    //setDisplayBankAccount(1000);
+    setBetAmount(1000)
   };
 
   // Animation loop
@@ -260,10 +180,10 @@ export default function PlinkoComponent() {
             const multiplier = MULTIPLIERS[idx];
             const winAmount = betAmount * multiplier;
             
-            // Add winnings back to bank account with animation
+            // Add winnings back to bank account
             const newBankAccount = bankAccount + winAmount;
             setBankAccount(newBankAccount);
-            animateNumber(displayBankAccount, newBankAccount, setDisplayBankAccount);
+            setBetAmount(newBankAccount)
             
             // Flash the bucket with intensity based on balls landed
             const currentIntensity = flashingBuckets.current.get(idx) || 0;
@@ -448,20 +368,6 @@ export default function PlinkoComponent() {
               width: '100px'
             }}
           />
-          <button 
-            onClick={allIn}
-            style={{
-              padding: '8px 16px', 
-              fontSize: 16, 
-              borderRadius: 6, 
-              border: 'none',
-              backgroundColor: '#f59e0b', 
-              color: 'white', 
-              cursor: 'pointer'
-            }}
-          >
-            All In
-          </button>
         </div>
         
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -469,9 +375,9 @@ export default function PlinkoComponent() {
           <span style={{ 
             fontSize: 18, 
             fontWeight: 'bold', 
-            color: displayBankAccount >= 1000 ? '#10b981' : displayBankAccount >= 500 ? '#fbbf24' : '#ef4444'
+            color: bankAccount >= 1000 ? '#10b981' : bankAccount >= 500 ? '#fbbf24' : '#ef4444'
           }}>
-            ${displayBankAccount.toFixed(2)}
+            ${bankAccount.toFixed(2)}
           </span>
         </div>
       
@@ -488,24 +394,6 @@ export default function PlinkoComponent() {
           }}
         >
           Drop Ball
-        </button>
-        <button
-          onClick={drop100Balls}
-          style={{
-            padding: '8px 16px', fontSize: 16, borderRadius: 6, border: 'none',
-            backgroundColor: '#059669', color: 'white', cursor: 'pointer'
-          }}
-        >
-          Drop 100 Balls
-        </button>
-        <button
-          onClick={drop1000Balls}
-          style={{
-            padding: '8px 16px', fontSize: 16, borderRadius: 6, border: 'none',
-            backgroundColor: '#7c3aed', color: 'white', cursor: 'pointer'
-          }}
-        >
-          Drop 1000 Balls
         </button>
         <button
           onClick={resetGame}
