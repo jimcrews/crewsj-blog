@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 const BALL_SIZE = 16;
 const PIN_SIZE = 10;
