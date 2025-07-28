@@ -367,6 +367,7 @@ export default function PlinkoComponent() {
               color: 'white',
               width: '100px'
             }}
+            disabled={balls.length > 0}
           />
         </div>
         
@@ -392,6 +393,7 @@ export default function PlinkoComponent() {
             padding: '8px 16px', fontSize: 16, borderRadius: 6, border: 'none',
             backgroundColor: '#9333ea', color: 'white', cursor: 'pointer'
           }}
+          disabled={bankAccount < 1 || balls.length > 0}
         >
           Drop Ball
         </button>
@@ -404,6 +406,9 @@ export default function PlinkoComponent() {
         >
           Reset
         </button>
+        {betAmount < 1 && bankAccount < 1 && <span style={{color:"black", fontSize:"30px", paddingTop:"5px"}}>Game Over</span>}
+
+        
       </div>
       
 
